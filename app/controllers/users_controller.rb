@@ -39,6 +39,7 @@ class UsersController < ApplicationController
   end
   
   def likes
+    @user = User.find(params[:id])
     params[:id] # user_id
     @microposts = User.liked_microposts_by(params[:id])
     # @microposts = current_user.feed_likes.order('created_at DESC').page(params[:page])
